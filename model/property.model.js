@@ -1,4 +1,5 @@
-import mongoose from "mongoose";
+import { DataTypes, INTEGER } from "sequelize";
+import sequelize from "../db/dbconfig.js";
 
 var today = new Date();
 var dd = today.getDate();
@@ -11,43 +12,49 @@ if(mm<10)
     mm='0'+mm; 
 today = dd+'/'+mm+'/'+yyyy;
 
-const propertySchema = new mongoose.Schema({
+const Property=sequelize.define("property",{
     userId:{
-        type:Number,
+        type:DataTypes.INTEGER,
         allowNull:false
     },
     description:{
-        type:String,
+        type:DataTypes.STRING,
         allowNull:false
     },
     rent:{
-        type:String,
+        type:DataTypes.INTEGER,
         allowNull:false
     },
     address:{
-        type:String,
+        type:DataTypes.STRING,
         allowNull:false
     },
     status:{
-        type:String,
+        type:DataTypes.STRING,
         allowNull:false
     },
     houseCategory:{
-        type:String,
+        type:DataTypes.STRING,
         allowNull:false
     },
-    imagesUrlArray:[],
+    imagesUrl:{
+        type:DataTypes.STRING(1000),
+        allowNull:false
+    },
     latitude:{
-        type:String,
+        type:DataTypes.STRING,
         allowNull:false
     },
     longitude:{
-        type:String,
+        type:DataTypes.STRING,
         allowNull:false
     },
     date:{
-       type:String,
+       type:DataTypes.STRING,
        defaultValue: today
     }
 });
-export const Property = mongoose.model("property",propertySchema);
+sequelize.sync().then(()=>{
+    console.log("Property table created");
+}).catch();
+export default Property;
