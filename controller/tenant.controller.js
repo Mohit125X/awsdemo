@@ -7,7 +7,7 @@ import WishList from "../model/wishList.model.js";
 import WishListHouse from "../model/wishListHouse.model.js";
 import HouseRequest from "../model/houseRequest.model.js";
 import Property from "../model/property.model.js";
-import sequelize from "../db/dbconfig.js";
+import sequelize from "../db/dbConfig.js";
 
 
 export const signUp = async (request, response, next) => {
