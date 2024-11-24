@@ -1,5 +1,5 @@
 import { DataTypes, INTEGER } from "sequelize";
-import sequelize from "../db/dbconfig.js";
+import sequelize from "../db/dbConfig.js";
 
 var today = new Date();
 var dd = today.getDate();

@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../db/dbconfig.js";
+import sequelize from "../db/dbConfig.js";
 let User = sequelize.define("user", {
     name: {
         type: DataTypes.STRING,

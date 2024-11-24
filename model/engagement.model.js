@@ -1,4 +1,4 @@
-import sequelize from "../db/dbconfig.js";
+import sequelize from "../db/dbConfig.js";
 import{DataTypes, STRING}from "sequelize";
 
 var today = new Date();

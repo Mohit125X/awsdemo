@@ -1,4 +1,4 @@
-import sequelize from "../db/dbconfig.js";
+import sequelize from "../db/dbConfig.js";
 import{DataTypes}from "sequelize";
 const City=sequelize.define("city",{
  cityName:{
